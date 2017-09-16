@@ -4,7 +4,7 @@ using Evernote.Entities.Base;
 
 namespace Evernote.Entities
 {
-    public class User: EntityBase
+    public class DUser: EntityBase
     {
         public string Name { get; set; }
         public string SurName { get; set; }
@@ -16,7 +16,7 @@ namespace Evernote.Entities
         public bool IsAdmin { get; set; }
 
         public virtual  List<DNote> Notes { get; set; }
-        public virtual  List<Comment> Comments { get; set; }
-        public List<Liked> Likes { get; set; }
+        public virtual  List<DComment> Comments { get; set; }
+        public List<DLiked> Likes { get; set; }
     }
 }

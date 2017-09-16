@@ -11,9 +11,9 @@ namespace Evernote.Entities
         public int LikeCount { get; set; }
         public int CategoryId { get; set; }
 
-        public virtual User User { get; set; }
-        public virtual  List<Comment> Comments { get; set; }
-        public virtual Category Category { get; set; }
-        public List<Liked> Likes { get; set; }
+        public virtual DUser User { get; set; }
+        public virtual  List<DComment> Comments { get; set; }
+        public virtual DCategory Category { get; set; }
+        public List<DLiked> Likes { get; set; }
     }
 }

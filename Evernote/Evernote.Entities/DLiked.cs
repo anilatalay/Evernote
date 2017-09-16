@@ -1,10 +1,10 @@
 ﻿namespace Evernote.Entities
 {
-    public class Liked
+    public class DLiked
     {
         public int Id { get; set; }
 
         public virtual DNote Note{ get; set; }
-        public virtual User User { get; set; }
+        public virtual DUser User { get; set; }
     }
 }

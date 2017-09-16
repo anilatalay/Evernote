@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Evernote.Entities.Base;
 
 namespace Evernote.Entities
 {
-    public class Category : EntityBase
+    public class DCategory : EntityBase
     {
         public string Title { get; set; }
         public string Description { get; set; }
