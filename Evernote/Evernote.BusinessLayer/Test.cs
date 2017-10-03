@@ -1,4 +1,5 @@
 ﻿using Evernote.DataAccessLayer;
+using Evernote.Entities;
 
 namespace Evernote.BusinessLayer
 {

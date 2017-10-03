@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using Evernote.BusinessLayer;
+using System.Web.Mvc;
 
 namespace Evernote.Web.Controllers
 {
@@ -7,8 +8,8 @@ namespace Evernote.Web.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            Test test = new Test();
 
-            
             return View();
         }
     }

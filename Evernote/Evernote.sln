@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evernote.Web", "Evernote.Web\Evernote.Web.csproj", "{82463ABF-89D3-4076-868A-04C09E88D9CF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evernote.BusinessLayer", "Evernote.BusinessLayer\Evernote.BusinessLayer.csproj", "{70340977-1A2C-4D27-93DD-A90032283552}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evernote.BusinessLayer", "Evernote.BusinessLayer\Evernote.BusinessLayer.csproj", "{70340977-1A2C-4D27-93DD-A90032283552}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evernote.DataAccessLayer", "Evernote.DataAccessLayer\Evernote.DataAccessLayer.csproj", "{29323A9A-A63B-4B17-8143-58344BC79CDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evernote.DataAccessLayer", "Evernote.DataAccessLayer\Evernote.DataAccessLayer.csproj", "{29323A9A-A63B-4B17-8143-58344BC79CDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evernote.Entities", "Evernote.Entities\Evernote.Entities.csproj", "{8DE1E855-1973-4EB5-BD17-783DCAAAFF64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evernote.Entities", "Evernote.Entities\Evernote.Entities.csproj", "{8DE1E855-1973-4EB5-BD17-783DCAAAFF64}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
