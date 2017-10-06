@@ -20,6 +20,12 @@ namespace Evernote.Entities
         public virtual DUser User { get; set; }
         public virtual  List<DComment> Comments { get; set; }
         public virtual DCategory Category { get; set; }
-        public List<DLiked> Likes { get; set; }
+        public virtual List<DLiked> Likes { get; set; }
+
+        public DNote()
+        {
+            Comments = new List<DComment>();
+            Likes = new List<DLiked>();
+        }
     }
 }

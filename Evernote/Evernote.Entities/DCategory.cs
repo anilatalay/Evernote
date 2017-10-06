@@ -15,5 +15,10 @@ namespace Evernote.Entities
         public string Description { get; set; }
 
         public virtual List<DNote> Notes { get; set; }
+
+        public DCategory()
+        {
+            Notes = new List<DNote>();
+        }
     }
 }

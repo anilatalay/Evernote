@@ -1,4 +1,5 @@
-﻿using Evernote.DataAccessLayer;
+﻿using System.Linq;
+using Evernote.DataAccessLayer;
 using Evernote.Entities;
 
 namespace Evernote.BusinessLayer
@@ -8,7 +9,7 @@ namespace Evernote.BusinessLayer
         public Test()
         {
             var db = new DatabaseContext();
-            db.Database.CreateIfNotExists();
+            var asd = db.Categories.ToList();
         }
     }
 }
