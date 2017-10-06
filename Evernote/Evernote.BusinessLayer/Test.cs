@@ -8,8 +8,14 @@ namespace Evernote.BusinessLayer
     {
         public Test()
         {
-            var db = new DatabaseContext();
-            var asd = db.Categories.ToList();
+            Repository<DCategory> repo = new Repository<DCategory>();
+            var data = repo.List();
+        }
+
+        public void InsertTest()
+        {
+            var repo = new Repository<DCategory>();
+            
         }
     }
 }
