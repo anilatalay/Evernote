@@ -1,34 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Evernote.DataAccessLayer;
-
-namespace Evernote.BusinessLayer
+﻿namespace Evernote.DataAccessLayer.EntityFramework
 {
     public class RepositoryBase
     {
-        private static DatabaseContext _db;
+        protected static DatabaseContext context;
         private static object _lockSync = new object();
 
         protected RepositoryBase()
         {
-
+            CreateContext();
         }
 
         public static DatabaseContext CreateContext()
         {
-            if (_db == null)
+            if (context == null)
             {
                 lock (_lockSync)
                 {
-                    if (_db == null)
+                    if (context == null)
                     {
-                        _db = new DatabaseContext();
+                        context = new DatabaseContext();
                     }
                 }
             }
 
-            return _db;
+            return context;
         }
     }
 }

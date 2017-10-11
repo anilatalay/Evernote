@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Evernote.DataAccessLayer;
+using Evernote.DataAccessLayer.EntityFramework;
 using Evernote.Entities;
 
 namespace Evernote.BusinessLayer

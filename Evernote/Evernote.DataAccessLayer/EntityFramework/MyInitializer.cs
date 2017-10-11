@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Data.Entity;
-using System.Linq;
 using Evernote.Entities;
 
-namespace Evernote.DataAccessLayer
+namespace Evernote.DataAccessLayer.EntityFramework
 {
     public class MyInitializer: CreateDatabaseIfNotExists<DatabaseContext>
     {

@@ -3,20 +3,17 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using Evernote.DataAccessLayer;
+using Evernote.DataAccessLayer.Abstract;
 
-namespace Evernote.BusinessLayer
+namespace Evernote.DataAccessLayer.EntityFramework
 {
-    public class Repository<T> where T : class
+    public class Repository<T> : RepositoryBase, IRepository<T> where T : class
     {
-        private DatabaseContext db;
         private DbSet<T> _objectSet;
 
         public Repository()
         {
-            db = RepositoryBase.CreateContext();
-            _objectSet = db.Set<T>();
+            _objectSet = context.Set<T>();
         }
 
         public List<T> List()
@@ -35,9 +32,9 @@ namespace Evernote.BusinessLayer
             return Save();
         }
 
-        private int Save()
+        public int Save()
         {
-            return db.SaveChanges();
+            return context.SaveChanges();
         }
 
         public int Update(T obj)
