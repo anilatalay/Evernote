@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Evernote.DataAccessLayer;
 using Evernote.Entities;
@@ -9,6 +10,8 @@ namespace Evernote.BusinessLayer
     {
         private Repository<DCategory> repo_category = new Repository<DCategory>();
         private Repository<DUser> repo_user = new Repository<DUser>();
+        private Repository<DComment> repo_comment = new Repository<DComment>();
+        private Repository<DNote> repo_note = new Repository<DNote>();
 
         public Test()
         {
@@ -33,6 +36,33 @@ namespace Evernote.BusinessLayer
             };
 
             var result = repo_user.Insert(user);
+        }
+
+        public void UpdateTest()
+        {
+            var user = repo_user.Find(x => x.UserName == "refik");
+            if (user != null)
+            {
+                user.UserName = "Vedat";
+                var result = repo_user.Update(user);
+            }
+        }
+
+        public void CommentTest()
+        {
+            var user = repo_user.Find(x => x.Id == 1);
+            var note = repo_note.Find(x => x.Id == 1);
+
+            var comment = new DComment
+            {
+                Text = "Bu bir test'dir.",
+                CreatedOn = DateTime.Now,
+                ModifiedOn = DateTime.Now.AddMinutes(5),
+                Note = note,
+                User = user
+            };
+
+            repo_comment.Insert(comment);
         }
     }
 }

@@ -8,13 +8,14 @@ using Evernote.DataAccessLayer;
 
 namespace Evernote.BusinessLayer
 {
-    public class Repository<T> where T : class 
+    public class Repository<T> where T : class
     {
-        private DatabaseContext db = new DatabaseContext();
+        private DatabaseContext db;
         private DbSet<T> _objectSet;
 
         public Repository()
         {
+            db = RepositoryBase.CreateContext();
             _objectSet = db.Set<T>();
         }
 
@@ -34,7 +35,7 @@ namespace Evernote.BusinessLayer
             return Save();
         }
 
-        public int Save()
+        private int Save()
         {
             return db.SaveChanges();
         }
