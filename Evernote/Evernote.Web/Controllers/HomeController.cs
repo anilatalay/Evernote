@@ -9,6 +9,7 @@ namespace Evernote.Web.Controllers
         public ActionResult Index()
         {
             Test test = new Test();
+            test.InsertTest();
 
             return View();
         }
