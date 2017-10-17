@@ -1,4 +1,7 @@
-﻿@{
+﻿@using Evernote.Entities
+@model List<DNote>
+
+@{
     ViewBag.Title = "Index";
 }
 
@@ -43,7 +46,49 @@
 
             <!-- Notlar -->
             <div class="row">
-
+                @foreach(var note in Model)
+                {
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <img src="http://placehold.it/320x150" alt="@note.Title" />
+                            <div class="caption">
+                                <h4>
+                                    <a href="#">
+                                        @note.Title
+                                    </a>
+                                </h4>
+                                <h6 class="text-right">
+                                    @note.User.UserName<span class="glyphicon glyphicon-user"></span><br />
+                                    @note.ModifiedOn.ToString("dd-MM-YY HH-mm")<span class="glyphicon glyphicon-time"></span>
+                                </h6>
+                                    @if(string.IsNullOrEmpty(note.Text) == false && note.Text.Length > 100)
+                                    {
+                                        <p>@(note.Text.Substring(0, 100) + "...")</p>
+                                        <p class="pull-right"><a href="#" class="btn btn-default btn-sm">Devamını Oku <span class="glyphicon glyphicon-chevron-right"></span></a></p>
+                                    }
+                                    else
+                                    {
+                                        <p>@note.Text</p>
+                                    }
+                            </div>
+                            <div>
+                                <hr />
+                            </div>
+                            <div class="ratings">
+                                <p class="pull-right">
+                                    <button class="btn btn-default btn-sm">
+                                        <span class="glyphicon glyphicon-comment"></span> Yorumlar
+                                    </button>
+                                </p>
+                                <p>
+                                    <button class="btn btn-default btn-sm" type="button">
+                                        <span class="glyphicon glyphicon-star-empty"></span>@note.LikeCount
+                                    </button>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     </div>
