@@ -1,6 +1,7 @@
 ﻿using Evernote.BusinessLayer;
 using Evernote.Entities;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 
@@ -18,7 +19,8 @@ namespace Evernote.Web.Controllers
             //}
 
             NoteManager nm = new NoteManager();
-            return View(nm.GetAllNote());
+            return View(nm.GetAllNote().OrderByDescending(x => x.ModifiedOn).ToList());
+            // return View(nm.GetAllNoteQueryable().OrderByDescending(x => x.ModifiedOn).ToList());
         }
 
         public ActionResult ByCategory(int? id)
@@ -39,7 +41,18 @@ namespace Evernote.Web.Controllers
 
             //TempData["nm"] = cat.Notes;
             //return RedirectToAction("Index", "Home");
-            return View("Index", cat.Notes);
+            return View("Index", cat.Notes.OrderByDescending(x => x.ModifiedOn).ToList());
+        }
+
+        public ActionResult MostLiked()
+        {
+            NoteManager nm = new NoteManager();
+            return View("Index", nm.GetAllNote().OrderByDescending(x => x.LikeCount).ToList());
+        }
+
+        public ActionResult About()
+        {
+            return View();
         }
     }
 }
