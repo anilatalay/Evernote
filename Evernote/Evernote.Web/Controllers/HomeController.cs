@@ -1,5 +1,7 @@
 ﻿using Evernote.BusinessLayer;
 using Evernote.Entities;
+using Evernote.Web.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,7 +11,6 @@ namespace Evernote.Web.Controllers
 {
     public class HomeController : Controller
     {
-        // GET: Home
         public ActionResult Index()
         {
             // CategoryController üzerinden gelen view talebi ve model..
@@ -51,6 +52,38 @@ namespace Evernote.Web.Controllers
         }
 
         public ActionResult About()
+        {
+            return View();
+        }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(LoginViewModel model)
+        {
+            return View();
+        }
+
+        public ActionResult Logout()
+        {
+            return View();
+        }
+
+        public ActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Register(RegisterViewModel model)
+        {
+            return View();
+        }
+
+        public ActionResult UserActive(Guid active_id)
         {
             return View();
         }
