@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Evernote.Web.ViewModels
+namespace Evernote.Entities.ValueObjects
 {
     public class RegisterViewModel
     {

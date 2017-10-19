@@ -1,4 +1,4 @@
-﻿@using Evernote.Web.ViewModels
+﻿@using Evernote.Entities.ValueObjects
 @model RegisterViewModel
 
 @{
@@ -6,6 +6,20 @@
 }
 
 <link href="~/Content/login-register.css" rel="stylesheet" />
+
+<style>
+    .validation-summary-errors {
+        border: 2px solid #000000;
+        background-color: #A0A0A0;
+        border-radius: 8px;
+    }
+
+    .validation-summary-errors ul {
+        list-style-type: none;
+        padding: 10px;
+        color: #000000;
+    }
+</style>
 
 @using (Html.BeginForm())
 {
@@ -16,6 +30,8 @@
                     <h1 class="text-center ">Kayıt Formu</h1>
                 </div>
                 <div class="main-content">
+
+                    @Html.ValidationSummary(false)
 
                     <div class="input-group ">
                         <span class="input-group-addon"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>

@@ -1,6 +1,6 @@
 ﻿using Evernote.BusinessLayer;
 using Evernote.Entities;
-using Evernote.Web.ViewModels;
+using Evernote.Entities.ValueObjects;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -80,10 +80,32 @@ namespace Evernote.Web.Controllers
         [HttpPost]
         public ActionResult Register(RegisterViewModel model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                UserManager um = new UserManager();
+                var res = um.RegisterUser(model);
+                if (res.Errors.Count > 0)
+                {
+                    res.Errors.ForEach(x => ModelState.AddModelError("", x));
+                    return View(model);
+                }
+
+                return RedirectToAction("RegisterOk");
+            }
+            return View(model);
         }
 
         public ActionResult UserActive(Guid active_id)
+        {
+            return View();
+        }
+
+        public ActionResult Test()
+        {
+            return null;
+        }
+
+        public ActionResult RegisterOk()
         {
             return View();
         }

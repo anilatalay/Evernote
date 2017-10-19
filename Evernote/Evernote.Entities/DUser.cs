@@ -26,7 +26,6 @@ namespace Evernote.Entities
 
         public bool IsActive { get; set; }
 
-        [Required]
         public Guid ActivateGuid { get; set; }
 
         public bool IsAdmin { get; set; }
